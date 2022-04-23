@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="gId">默认id排序</button>
+    <button id="price">价格降序</button>
+    <button id="hot">热度降序</button>
+    <ul id="list">
+
+    </ul>
+
+    <script>
+        var oList = document.getElementById('list')
+        var oGId = document.getElementById('gId')
+        var oHot = document.getElementById('hot')
+        var oPrice = document.getElementById('price')
+
+        // 1. 获取真正的数据
+        var data = [{
+                brand: "苹果手机",
+                id: "1",
+                price: "11988",
+                hot: "199"
+            },
+            {
+                brand: "联想手机",
+                id: "2",
+                price: "1988",
+                hot: "1199"
+            },
+            {
+                brand: "华为手机",
+                id: "3",
+                price: "12988",
+                hot: "1299"
+            },
+            {
+                brand: "三星手机",
+                id: "4",
+                price: "7988",
+                hot: "3199"
+            },
+            {
+                brand: "魅族手机",
+                id: "5",
+                price: "988",
+                hot: "1099"
+            },
+            {
+                brand: "小米手机",
+                id: "6",
+                price: "19988",
+                hot: "109"
+            },
+            {
+                brand: "锤子手机",
+                id: "7",
+                price: "88",
+                hot: "199999"
+            },
+        ];
+
+        //2.把数据真正的展示到页面中
+        function showData() {
+            //每次重新渲染之前，先清空当前里边的内容
+            oList.innerHTML = "";
+            //遍历数据 每拿到一个数据则生成一个li
+            for (var i = 0; i < data.length; i++) {
+                var str = "<li>\
+                    <h2>" + data[i].brand + "</h2>\
+                    <p>价格<span>" + data[i].price + "</span></p>\
+                    <p>热度<span>" + data[i].hot + "</span></p>\
+                    <p>id<span>" + data[i].id + "</span></p>\
+                </li> "
+
+                console.log(str);
+
+                //每次遍历都得到数据对应的结构了，则把它依次追加到ul中即可
+                //innerHTML是获取一个元素内的内容，或者设置一个元素的内容(直接会覆盖原有内容)
+                //innerHTML设置内容的时候，可以把字符串中的标签给解析
+                // console.log(oList.innerHTML);
+                oList.innerHTML += str;
+            }
+        }
+
+        //首先先调用一下，获取基本数据
+        showData();
+
+
+        oHot.onclick = function () {
+            //把数组按照热度降序
+            data.sort(function (a, b) {
+                /* if (+a.hot > +b.hot) {
+                    return -1; //因为回调函数return的是负值 则就交换位置
+                } else {
+                    return 1;
+                } */
+
+                return b.hot - a.hot
+            })
+            console.log(data);
+
+            //数据排列之后，重新按照数据进行渲染即可
+            showData();
+        }
+
+
+        oPrice.onclick = function () {
+            //把数组按照热度降序
+            data.sort(function (a, b) {
+
+                return b.price - a.price
+            })
+
+            //数据排列之后，重新按照数据进行渲染即可
+            showData();
+        }
+
+
+        oGId.onclick = function () {
+            //把数组按照热度降序
+            data.sort(function (a, b) {
+                return a.id - b.id;
+            })
+
+            //数据排列之后，重新按照数据进行渲染即可
+            showData();
+        }
+    </script>
+</body>
+
+</html>

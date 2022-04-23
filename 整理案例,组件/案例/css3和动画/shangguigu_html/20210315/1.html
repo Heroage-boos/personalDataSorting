@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+            border:solid 1px red;
+
+/*             transform:translate(300px,100px); */
+        
+            transition:3s linear 200ms;
+            position: relative;
+        }
+        div div{
+            width:150px;
+            height:150px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%) skewx(45deg) skewY(90deg) scale();
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+
+        </div>
+    </div>
+</body>
+</html>

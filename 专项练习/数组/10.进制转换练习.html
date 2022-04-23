@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function to2B(num) {
+            //每次把num除以2 把得到值取整，如果值为0了，则说明计算完毕了
+            var n = 0;
+            //定义一个数组，用来存放余数
+            var arr = [];
+            var str = ""; //最后用字符串保存起来二进制的值
+            while (num > 0) {
+                n = num % 2; //每次拿num值对2取余 得到余数，并且把余数按照顺序存起来
+                arr.push(n); //把得到的余数用数组保存起来
+                num = parseInt(num / 2); //num除2以后 得到的数取一个整，继续while运算
+            }
+            console.log(arr);
+            //用字符串把应该得到的二进制数表示出来，应该从数组中倒着拿值
+            /* for (var i = arr.length - 1; i >= 0; i--) {
+                str += arr[i]
+            } */
+
+            //只要数组还有值 则继续删除 拼接
+            while (arr.length > 0) {
+                str += arr.pop(); //pop每次都会删除数组最后一个值 然后拼接到str上
+            }
+
+            return str;
+        }
+
+        var re = to2B(21);
+        console.log(re);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            indexOf:
+                检验数组中有没有出现某个元素 
+                - 返回检测到第一个元素所在的下标，如果没有检测到则返回-1
+                - 参数1：被检测的元素
+                - 参数2：开始检测的位置
+                - 检测的时候 是全等判断
+            lastIndexOf:
+                和indexOf类似，只不过是倒着开始检测，返回的仍然是下标
+        */
+
+        var o = {};
+        var arr = ["a", "b", "c", "d", [], o, "a", "e", "f"];
+        // var re = arr.indexOf(1, 2);
+        // var re = arr.indexOf([]); //因为是全等判断  所以返回-1
+        var re = arr.indexOf(o); //因为是全等判断  所以返回-1
+        console.log(re);
+        var re = arr.lastIndexOf("a", 4)
+        console.log(re);
+    </script>
+</body>
+
+</html>

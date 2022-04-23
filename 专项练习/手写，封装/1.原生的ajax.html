@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //异步的javascript和xhr，可以实现不需要刷新和跳转页面就能与后台进行交互获取数据，配合dom的增删改查实现动态展示功能
+      //1.获取xhr对象
+      var xhr = new XMLHttpRequest();
+      //2.发送请求方式和地址
+      xhr.open(method, url, true); //url可以携带params ?   query使用/拼接的参数
+      //3.发送请求头
+      xhr.setRequestHeader("text-content", "applocation/www-xxx-cong-ddd");
+      //4.发送请求体参数
+      xhr.send(null); //携带请求体参数
+      //5.获取响应数据
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log(xhr.responseText);
+        }
+      };
+    </script>
+  </body>
+</html>

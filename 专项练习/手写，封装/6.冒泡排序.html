@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * 冒泡排序
+       * */
+      var arr = [1, 4321, 3, 56, 23, 46, 98, 6, 134, 3];
+
+      //第一次遍历获取到
+      for (var j = 0; j < arr.length; j++)
+        for (var i = 0; i < arr.length - j; i++) {
+          if (arr[i] >= arr[i + 1]) {
+            var temp = arr[i];
+            arr[i] = arr[i + 1];
+            arr[i + 1] = temp;
+          }
+        }
+      console.log(arr);
+    </script>
+  </body>
+</html>

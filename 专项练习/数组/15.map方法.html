@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            map方法:
+                - 映射数组
+                - 和forEach的书写方法一致
+                - 一定会返回一个和原数组长度一样的新数组
+                - 返回新数组的每一个元素的值，就是对应原数组的值在回调函数操作后的返回值
+
+                - 当想要对数组中的每个值都进行修饰操作的时候，此时可以选择map
+        
+        */
+
+        //让数组的每个值都添加1
+        var arr = [1, 2, 3, 4, 5, 6];
+        var re = arr.map(function (item, index) {
+            return item + 1;
+        });
+        console.log(re);
+    </script>
+</body>
+
+</html>

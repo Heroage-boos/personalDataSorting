@@ -1,0 +1,48 @@
+body{
+    background: url(../images/u5.jpg) no-repeat;
+   background-size: 100%;
+}
+.container{
+    width: 985px;height: 550px;
+    margin: 100px auto;
+   position: relative;
+}
+.rows{
+  /* 弹性盒子 */
+  display: flex;
+  /* 两端对齐 */
+  justify-content: space-between;
+ 
+}
+
+img{
+    height: 134px;width: 192px;
+}
+.item{
+    opacity: 0.6;
+}
+
+.current{
+    opacity: 1;
+}
+
+.db_cj{
+    background: url(../images/btn_cj.jpg) no-repeat;
+    background-size: 100%;
+    height: 68px;width: 200px;
+    position: absolute;
+    top:50%;right:50%;
+    
+    /* 改变为手的形 */
+   cursor: pointer;
+
+   transform: translate(50%,-50%);
+
+
+   line-height: 68px;
+   font-size: 20px ;
+   text-align: center;
+   color:#ddd;
+
+}
+

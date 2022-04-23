@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background:url(images/u5.jpg)  no-repeat;
+            background-size: 100%;
+        }
+        .container{
+            height:550px ;width: 985px;
+            
+            margin:100px auto;
+
+            position: relative;
+        }
+        .row{
+            display:flex;
+            justify-content: space-between;
+        }
+        .item{
+            opacity: 0.5;
+        }
+        .current{
+            opacity: 1;
+        }
+        .btn_cj{
+            height: 68px;width:200px;
+            background:url(images/btn_cj.jpg)no-repeat;
+            background-size: 100%;
+            line-height: 68px;
+            font-size: 20px;
+            text-align: center;
+            color:beige;
+            cursor: pointer;
+
+            position:absolute ;
+            top:50%;left:50%;
+
+            transform: translate(-50%,-50%);
+
+        }
+
+        .item > img{
+            width:192px;height: 134px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+          <div class="row">
+              <div class="item current" id="item1"><img src="images/01.png"></div>
+              <div class="item" id="item2"><img src="images/02.png"></div>
+              <div class="item" id="item3"><img src="images/03.png"></div>
+              <div class="item" id="item4"><img src="images/04.jpg"></div>
+              <div class="item" id="item5"><img src="images/05.png"></div>
+          </div>
+          <div class="row">
+            <div class="item" id="item14"><img src="images/14.png"></div>
+            <div class="item" id="item6"><img src="images/06.png"></div>
+          </div>
+          <div class="row">
+            <div class="item" id="item13"><img src="images/13.png"></div>
+            <div class="item" id="item7"><img src="images/07.png"></div>
+          </div>
+          <div class="row">
+            <div class="item" id="item12"><img src="images/12.png"></div>
+            <div class="item" id="item11"><img src="images/11.png"></div>
+            <div class="item" id="item10"><img src="images/10.png"></div>
+            <div class="item" id="item9"><img src="images/09.png"></div>
+            <div class="item" id="item8"><img src="images/08.png"></div>
+          </div>
+          <div class="btn_cj" onclick="go()">抽奖</div>
+    </div> 
+
+    <script src="js/index03.js"></script>
+
+</body>
+</html>

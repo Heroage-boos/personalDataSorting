@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            100以内所有的质数 一般从2开始
+            质数：只能被1和自身整除
+        
+        */
+        var arr = [];
+        //第一步：取得所有2-100之间的数字
+        for (var i = 2; i <= 100; i++) {
+            //再次遍历，拿到 2--i之间所有的数字
+            arr.push(i);
+            for (var j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    arr.pop();
+                    break;
+                }
+            }
+        }
+
+        console.log(arr);
+    </script>
+</body>
+
+</html>

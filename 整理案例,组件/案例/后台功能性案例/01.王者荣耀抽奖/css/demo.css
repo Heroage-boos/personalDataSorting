@@ -1,0 +1,51 @@
+body{
+    background:url(../images/u5.jpg) no-repeat;
+    height:auto;width: auto;
+}
+
+h1{
+    color:red;
+    font-size:600px;
+}
+.container{
+    background: palevioletred;
+    width: 800px;
+    height: 200px;
+    /* 弹性盒子 */
+    display:flex;
+    /* 两端对齐 */
+    justify-content: center;
+
+    position: relative;
+}
+.bbb{
+    background: blue;
+    width: 200px;height: 50px;
+}
+.ccc{
+    width:200px;height:50px;
+    background: red;
+
+    position: absolute;
+    top: 50%;left:50%;
+    /* 往左移动自身宽度的50%,使其位于水平中心位置
+    往上移动自身高度的50%,使其位于垂直中心位置 */
+    transform: translate(-50%,-50%) ;
+
+    /* 把鼠标形状变为手的形状 */
+    cursor: pointer;
+    /* 不透明度 */
+    opacity: 0.5;
+}
+
+
+
+.a1{
+ background:green;
+}
+.a2{
+    color:red;
+}
+.a3{
+    font-size: 30px;
+}

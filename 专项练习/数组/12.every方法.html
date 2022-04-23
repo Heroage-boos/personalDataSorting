@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            every方法：
+                判断数组中所有的元素是否都符合条件，返回布尔值  
+                一假即假
+        
+        */
+
+        var arr = [{
+                name: "xiaowang",
+                age: 19
+            },
+            {
+                name: "laowang",
+                age: 29
+            },
+            {
+                name: "xiaohuang",
+                age: 13
+            },
+            {
+                name: "laohuang",
+                age: 49
+            },
+            {
+                name: "xiaohe",
+                age: 19
+            },
+            {
+                name: "laohei",
+                age: 20
+            },
+            {
+                name: "xiaogege",
+                age: 19
+            },
+        ];
+
+        //检测当前所有人，是否都是年满18
+
+        //不使用every
+        /*  function check(arr) {
+             for (var i = 0; i < arr.length; i++) {
+                 if (arr[i].age < 18) {
+                     return false;
+                 }
+             }
+
+             //for循环执行完成之后还没有return false 则直接返回true
+             return true;
+         }
+
+         console.log(check(arr)); */
+
+
+
+        /* 
+           使用every:  
+               every接受一个回调函数作为参数
+               数组的值会依次调用函数执行
+               回调函数接受3个参数 1.item 当前的值  2.index 当前值的下标 3.array 原数组的引用
+        
+        
+        */
+
+        var re = arr.every(function (item, index, array) {
+            console.log(item, index, array);
+            // console.log(array === arr);
+
+            //判断item的年龄是否大于18 如果大于则返回true  继续执行下一次检测，如果小于则直接返回false，every执行结束，整体返回false
+            //如果检测到最后一位仍然返回true，则every方法返回true
+
+            /* if (item.age > 18) {
+                return true;
+            } else {
+                return false;
+            } */
+
+            return item.age > 18;
+        });
+        console.log(re);
+    </script>
+</body>
+
+</html>

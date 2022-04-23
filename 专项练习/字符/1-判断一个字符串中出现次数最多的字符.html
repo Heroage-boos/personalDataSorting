@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   // 判断一个字符串中出现次数最多的字符，统计这个次数
+var str = 'asdfssaaasasasasaa';
+var obj = {};
+//charAt()    str.charAt(下标) 根据下标来查询字符串下标的某个字符  返回查询到的字符
+for (var i = 0; i<str.length;i++){
+   if(!obj[str.charAt(i)]){//0==>a  1==>b ....   !obj.a ==> !undefind true  
+    obj[str.charAt(i)] = 1; 
+  }else{
+    obj[str.charAt(i)]++;// !obj.a ==> !true  false +1  
+  }
+};
+var iMax = 0;
+var iIndex = '';
+for(var i in obj){
+  if(obj[i]>iMax){
+    iMax = obj[i];
+    iIndex = i;
+  }
+}        
+console.log('出现次数最多的是:'+iIndex+'出现'+iMax+'次');
+
+    </script>
+</body>
+</html>

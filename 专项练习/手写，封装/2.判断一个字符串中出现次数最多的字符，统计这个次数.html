@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var str = "asdfssaaasasasasaa";
+      function maxStrig(str) {
+        //1.创建一个空对象并遍历字符串
+        const obj = {};
+        //将字符转换为数组
+        //console.log(str.split(""));
+        const arrStr = str.split("");
+        for (var i = 0; i < arrStr.length; i++) {
+          //2.如果空对象中没有这个字符那么就将字符作为属性添加到对象中，count+1 ，如果有直接count+1
+          let a = arrStr[i];
+          obj[a] = {
+            [a]: a,
+            count: 0,
+          };
+        }
+        for (var i = 0; i < arrStr.length; i++) {
+          if (obj[arrStr[i]]) {
+            obj[arrStr[i]].count++;
+          }
+        }
+        console.log(obj);
+      }
+      maxStrig(str);
+    </script>
+  </body>
+</html>

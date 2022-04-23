@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * new主要做了什么
+       * 1.返回一个对象
+       * 2.使函数的显式原型指向对象的隐式原型上面
+       * */
+      function myNew(fn) {
+        //1.创建一个对象并返回
+        var newObj = {};
+        //2.使函数的显式原型指向实例对象的隐式原型上面
+        newObj.__proto__ = fn.prototype;
+        //3.使函数改变this作为实例对象的方法
+        //获取函数身上的参数
+        var objStr = Array.from(arguments).slice(1);
+        var re = fn.apply(newObj, objStr);
+        //判断类型
+        if ((re === "object" && re !== null) || re !== "function") {
+          return re;
+        }
+
+        return newObj;
+      }
+    </script>
+  </body>
+</html>

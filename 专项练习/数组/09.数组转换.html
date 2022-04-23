@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            数组转换：
+                toString():
+                    - 将数组转为字符串，当数组处在一个字符串环境的时候会自动的调用
+                    - 其实是把数组的中括号去掉，然后添加了引号 变成一个字符串
+
+                join();
+                    - 将数组转为字符串,原数组不变 返回一个字符串
+                    - 可以传递参数，参数就是取代 数组转为字符串后的逗号 的符号
+        
+        */
+        /* var arr = [1, 2, 3, 4];
+
+        //重写了arr的toString方法
+        arr.toString = function () {
+            return "1";
+        }
+
+        console.log(arr + '1'); */
+
+
+
+        var arr = [1, 2, 3, 4];
+        var re = arr.join("");
+        console.log(arr);
+        console.log(re);
+
+
+
+        //将字符串反转
+
+        var str = 'annasdjasd';
+        //字符串转数组使用 split方法 参数是代表以什么为切割
+        var re = str.split("");
+        console.log(re);
+        var re2 = re.reverse();
+        console.log(re2);
+        var re3 = re2.join("");
+        console.log(re3)
+    </script>
+</body>
+
+</html>

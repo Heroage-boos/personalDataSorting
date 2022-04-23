@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            some方法：
+                判断数组中元素是否有符合条件的，如果有则返回布尔值  
+                一真即真
+        
+        */
+
+        var arr = [{
+                name: "xiaowang",
+                age: 19
+            },
+            {
+                name: "laowang",
+                age: 29
+            },
+            {
+                name: "xiaohuang",
+                age: 23
+            },
+            {
+                name: "laohuang",
+                age: 49
+            },
+            {
+                name: "xiaohe",
+                age: 19
+            },
+            {
+                name: "laohei",
+                age: 20
+            },
+            {
+                name: "xiaogege",
+                age: 19
+            },
+        ];
+
+        //检测当前所有人，是否有人不满18
+
+
+
+
+        /* 
+           使用some:  
+               some接受一个回调函数作为参数
+               数组的值会依次调用函数执行
+               回调函数接受3个参数 1.item 当前的值  2.index 当前值的下标 3.array 原数组的引用
+        
+        
+        */
+
+        var re = arr.some(function (item, index, array) {
+            console.log(item, index, array);
+            // console.log(array === arr);
+
+            //判断item的年龄是否小于18 如果有则返回true,则some停止执行
+            //如果年龄没有小于18 则继续下一次执行，如果执行完毕没有符和条件的 则some返回false
+
+            return item.age < 18;
+        });
+        console.log(re);
+    </script>
+</body>
+
+</html>

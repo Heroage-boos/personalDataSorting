@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            filter方法：
+                - fliter方法是过滤数组
+                - 书写和forEach一致
+                - 一定返回一个数组
+                - 当原数组的值依次进入回调函数执行的时候，如果回调函数返回true,则把当前的值放到返回的新数组中
+        
+        */
+
+        var arr = [{
+                name: "xiaowang",
+                age: 19
+            },
+            {
+                name: "laowang",
+                age: 29 
+            },
+            {
+                name: "xiaohuang",
+                age: 13
+            },
+            {
+                name: "laohuang",
+                age: 49
+            },
+            {
+                name: "xiaohe",
+                age: 19
+            },
+            {
+                name: "laohei",
+                age: 20
+            },
+            {
+                name: "xiaogege",
+                age: 19
+            },
+        ];
+
+        //筛选数组中年龄大于20的人
+        var re = arr.filter(function (item, index) {
+            /* if (item.age > 20) {
+                return true;
+            } else {
+                return false;
+            } */
+
+            return item.age > 20;
+        });
+        console.log(re)
+    </script>
+</body>
+
+</html>

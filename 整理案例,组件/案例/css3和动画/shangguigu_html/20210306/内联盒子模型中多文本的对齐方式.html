@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>内联盒子模型多文本对齐方式__css_尚硅谷</title>
+    </head>
+    <style>
+     /*   4 body{
+            font-size: 0;
+        } */
+        div{
+           
+            width:600px;
+            height: 500px;
+            border:solid red 1px;
+          /*   3.设置行高和高度对齐使其行内块元素垂直对齐 */
+            line-height: 500px;
+            height: auto;
+          
+        }
+        div span{
+           /*  1.转换为行内块级元素 */
+           display:inline-block;
+          /*  2.设置默认的line-height行高 */
+          line-height: normal;
+          /* 4  font-size: 16px; */
+         /*  使其位于幽灵节点的父标签的1/2处对齐 */
+          vertical-align: middle;
+         
+        }
+
+
+    </style>
+    <body>
+        <div> 
+           
+            <span>内联元素不能设置宽和高，支持水平方向的内边距和边框，内联元素不能设置宽和高，支持水平方向的内边距和边框，内联元素不能设置宽和高，支持水平方向的内边距和边框，内联元素不能设置宽和高，支持水平方向的内边距和边框，内联元素不能设置宽和高，支持水平方向的内边距和边框，
+      </span>
+      
+        </div>
+      
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本缩进，换行_css_尚硅谷</title>
+    <style>
+        /* 设置段落首行缩进text-indent: em ,px ,rem等
+        
+        
+         */
+        div p{
+            text-indent:2em;
+        }
+        
+        div.ull{
+            border:solid 1px red;
+            width:200px;
+            height:300px;
+          
+           /* 超出后不换行
+           white-space:nowrap; */
+           /* white-space:normal;默认超出后换行 */
+           white-space:nowrap;
+          /* overflow:hidden;溢出后隐藏 */
+          overflow:visible;
+         /*  overflow:hidden;
+          overflow:visible; */
+
+        }
+        .ull ul{
+            list-style: none;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            Margin （外）边距是元素边界与其周围之间的距离，包括如下属性：
+margin-top：设置顶边的边距
+margin-right：设置右边的边距
+margin-bottom：设置底边的页边距
+margin-left：设置左边的边距
+margin：简写属性，在单个声明中设置所有边的边距，和其他有四方向属性的简写一致，也是可以使用 1 - 4 个值来进行设置的，具体规则可以参考盒模型（1）当中的 padding 部分。
+————————————————
+版权声明：本文为CSDN博主「weixin_39789094」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_39789094/article/details/113077805
+        </p>
+        <div class="ull">
+            <ul>
+                <li>margin-left：设置左边的边距</li>
+                <li>margin-left：设置左边的边距</li>
+                <li>margin-left：设置左边的边距</li>
+                <li>margin-left：设置左边的边距</li>
+            </ul>
+        </div>
+      
+    </div>
+    
+</body>
+</html>

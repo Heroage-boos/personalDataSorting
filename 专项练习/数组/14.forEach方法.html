@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            forEach:
+                - 遍历数组
+                - 接受一个回调函数作为参数，数组的值依次调用回调函数执行
+                - 回调函数接受3个参数  分别是 1.当前值 2.下标  3.原数组的引用
+                - 单纯的遍历数组，没有返回值
+        */
+        //给数组的值都加1
+        var arr = [1, 2, 3, 4, 5, 6];
+        var newArr = [];
+        arr.forEach(function (item, index, array) {
+            // console.log(item, index)
+            newArr.push(item + 1);
+        })
+        console.log(newArr);
+    </script>
+</body>
+
+</html>

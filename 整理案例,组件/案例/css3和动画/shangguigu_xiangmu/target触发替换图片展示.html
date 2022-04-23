@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>iframe和a链接_html_尚硅谷</title>
+    </head>
+    <style>
+        #kf{
+            padding:0px;
+            margin:0px;
+        }
+        .kf-center{
+            width:630px;
+            height: 620px;
+          /*   border:solid 1px rebeccapurple; */
+            margin:0px auto;
+        }
+        .kf-center iframe{
+            width:620px;
+            height:500px;
+            border-style: none;
+            size:auto;   
+        }
+        .kf-center div:nth-child(n){
+            width: 110px;
+            height:90px;
+            float:left;
+          /*   border:solid 1px rebeccapurple; */
+            margin-left:7px;
+            margin-right:7px;
+        }
+        .kf-center div a img{
+            width:100%;
+            height:100%;
+           
+        }
+    </style>
+    <body>
+        <div id="kf">
+            <div class="kf-center">
+                <iframe src="./images/kof-01.jpg" width="100%" height="100%" name="kfimg" scrolling="no"
+                frameborder="0">
+             
+                </iframe> 
+                 <div >
+                    <a href="./images/kof-01.jpg" target="kfimg">  <img src="images/kof-01.jpg"></a>
+                </div>
+                <div >
+                    <a href="./images/kof-02.jpg"  target="kfimg">  <img src="images/kof-02.jpg"></a>
+                </div>
+                <div >
+                    <a href="./images/kof-03.jpg"  target="kfimg">  <img src="images/kof-03.jpg"></a>
+                </div>
+                <div >
+                    <a href="./images/kof-04.jpg"  target="kfimg">  <img src="images/kof-04.jpg"></a>
+                </div>
+                <div >
+                    <a href="./images/kof-05.jpg"  target="kfimg">  <img src="images/kof-05.jpg"></a>
+                </div> 
+           
+            </div>
+        </div>
+
+    </body>
+</html>

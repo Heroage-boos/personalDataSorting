@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var obj = { name: "小王", age: 20 };
+
+      const isCheck = function (x) {
+        return Object.prototype.toString.call(x).slice(8, -1).toLowerCase();
+      };
+
+      const clone = function (obj) {
+        //1.类型判断并进行新对象赋值
+        if (isCheck(obj) === "object") {
+          newObj = {};
+        } else if (isCheck(obj) === "array") {
+          newObj = [];
+        } else {
+          return obj;
+        }
+        //2.赋值
+        for (var key in obj) {
+          newObj[key] = clone(obj[key]);
+        }
+
+        //3.返回新对象
+        return newObj;
+      };
+      clone(obj);
+      console.log(newObj);
+    </script>
+  </body>
+</html>

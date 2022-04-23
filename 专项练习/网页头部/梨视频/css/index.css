@@ -1,0 +1,76 @@
+.head {
+  border: solid 1px red;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+.head .head-nav {
+  border: rebeccapurple 1px solid;
+  width: 1340px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0px 50px 0px 50px;
+  margin: 0px 124px 0px 124px;
+  display: flex;
+  justify-content: space-between;
+}
+.head .head-nav .head-nav-left {
+  width: 885px;
+  border: solid 1px green;
+  display: flex;
+  justify-content: flex-start;
+}
+.head .head-nav .head-nav-left a {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+}
+.head .head-nav .head-nav-left a h1 {
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+}
+.head .head-nav .head-nav-left a h1 img {
+  width: 42px;
+  height: 58px;
+}
+.head .head-nav .head-nav-left a strong {
+  vertical-align: top;
+}
+.head .head-nav .head-nav-left ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+}
+.head .head-nav .head-nav-left ul .start {
+  color: yellow;
+}
+.head .head-nav .head-nav-left ul li {
+  margin-left: 18px;
+}
+.head .head-nav .head-nav-right {
+  width: 182px;
+  border: solid 1px red;
+}
+.head .head-nav .head-nav-right ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+}
+.head .head-nav .head-nav-right ul li:nth-child(1) {
+  width: 64px;
+  height: 20px;
+  margin-left: 0px;
+  border: solid blue 1px;
+  border-radius: ;
+}
+.head .head-nav .head-nav-right ul li {
+  width: 24px;
+  height: 24px;
+  margin-left: 20px;
+}
