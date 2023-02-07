@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>参考网址:https://codepen.io/alphardex/pen/ExxQOWV</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Lato:300");
+      body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: #222;
+      }
+
+      .rainbow {
+        letter-spacing: 0.2rem;
+        font-size: 1.2rem;
+        font-family: Lato, serif;
+        text-transform: uppercase;
+      }
+      .rainbow span {
+        animation: rainbow 50s alternate infinite forwards;
+      }
+
+      @keyframes rainbow {
+        0% {
+          color: #918fef;
+        }
+        5% {
+          color: #8fefea;
+        }
+        10% {
+          color: #ef8fe1;
+        }
+        15% {
+          color: #efa38f;
+        }
+        20% {
+          color: #efd48f;
+        }
+        25% {
+          color: #8fc4ef;
+        }
+        
+        30% {
+          color: #cfef8f;
+        }
+        35% {
+          color: #d78fef;
+        }
+        40% {
+          color: #ef978f;
+        }
+        45% {
+          color: #c6ef8f;
+        }
+        50% {
+          color: #efd68f;
+        }
+        55% {
+          color: #efb98f;
+        }
+        60% {
+          color: #c98fef;
+        }
+        65% {
+          color: #efb68f;
+        }
+        70% {
+          color: #c1ef8f;
+        }
+        75% {
+          color: #d48fef;
+        }
+        80% {
+          color: #8f96ef;
+        }
+        85% {
+          color: #e98fef;
+        }
+        90% {
+          color: #9c8fef;
+        }
+        95% {
+          color: #efbe8f;
+        }
+        100% {
+          color: #ef8fe9;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="rainbow">ano hi mada shiranai no fushigi no monogatari</div>
+  </body>
+  <script>
+    let rainbowText = document.querySelector(".rainbow");
+    let letters = rainbowText.textContent.split("");
+    rainbowText.textContent = "";
+    letters.forEach((letter, i) => {
+      let span = document.createElement("span");
+      span.textContent = letter;
+      span.style.animationDelay = `${-20 + i * 0.2}s`;
+      rainbowText.append(span);
+    });
+  </script>
+</html>

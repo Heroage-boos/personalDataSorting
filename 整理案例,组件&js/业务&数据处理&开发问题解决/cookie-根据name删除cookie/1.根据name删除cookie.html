@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <p>根据name删除cookie</p>
+  </body>
+  <script>
+    let demoCookie =
+      "anonymid=kmol2vxqgd4n0e; depovince=HEB; _r01_=1; ick_login=c577d6c0-0ec3-465a-89d0-9e2b8f23e107; taihe_bi_sdk_uid=0738130d7f4532165841f09abc596215; taihe_bi_sdk_session=6277ea795624ba1eddb2603d7fe45c85; _de=1D29BC9596B9643C92425970B59A3DAE; p=3e6989099ff75de92407b791266376095; first_login_flag=1; ln_uact=18519784236; ln_hurl=http://hdn.xnimg.cn/photos/hdn321/20191017/0945/h_main_El46_9a13000ecbe41986.jpg; t=7f25f8a4d3515786d146143f63d108b25; societyguester=7f25f8a4d3515786d146143f63d108b25; id=972496145; xnsid=9770206d; wpsid=15900539012757; ver=7.0; loginfrom=null; wp_fold=0; jebecookies=59f8dfaf-8416-4dbc-a539-016a7ae1b6c5|||||";
+    console.log("根据name读取cookie", getCookie("taihe_bi_sdk_session"));
+    //name: cookie 的name
+    removeCookie(name);
+    //根据name删除cookie
+    function removeCookie(name) {
+      // 设置已过期，系统会立刻删除cookie
+      setCookie(name, "1", -1);
+    }
+
+    function setCookie(name, value, days) {
+      var date = new Date();
+      date.setDate(date.getDate() + days);
+      document.cookie = name + "=" + value + ";expires=" + date;
+    }
+  </script>
+</html>

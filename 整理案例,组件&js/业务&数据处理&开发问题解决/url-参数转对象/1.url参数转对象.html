@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>url参数转对象</p>
+  </body>
+  <script>
+    let demoUrl =
+      "https://blink.csdn.net/details/1457721?spm=1000.2115.3001.6382&utm_medium=distribute.pc_feed_v2.none-task-blink-top_blink-1-1457721-null-null.pc_personrec&depth_1-utm_source=distribute.pc_feed_v2.none-task-blink-top_blink-1-1457721-null-null.pc_personrec";
+    console.log("获取url参数转对象", parseQueryString(demoUrl));
+    function parseQueryString(url) {
+      url = !url ? window.location.href : url;
+      if (url.indexOf("?") === -1) {
+        return {};
+      }
+      var search = url[0] === "?" ? url.substr(1) : url.substring(url.lastIndexOf("?") + 1);
+      if (search === "") {
+        return {};
+      }
+      search = search.split("&");
+      var query = {};
+      for (var i = 0; i < search.length; i++) {
+        var pair = search[i].split("=");
+        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || "");
+      }
+      return query;
+    }
+  </script>
+</html>

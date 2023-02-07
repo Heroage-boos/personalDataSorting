@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>参考网址:https://codepen.io/alphardex/pen/povvGNZ</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        line-height: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      class="form-check-inline"
+      oninput="rate.value=parseInt(Array.from(document.querySelectorAll(`input[name='rating']`)).filter(e=>e.checked)[0].value)"
+    >
+      <div class="rate">
+        <input type="radio" id="5" value="5" name="rating" />
+        <label for="5"></label>
+        <input type="radio" id="4" value="4" name="rating" />
+        <label for="4"></label>
+        <input type="radio" id="3" value="3" name="rating" />
+        <label for="3"></label>
+        <input type="radio" id="2" value="2" name="rating" />
+        <label for="2"></label>
+        <input type="radio" id="1" value="1" name="rating" />
+        <label for="1"></label>
+      </div>
+      <output name="rate"></output>
+    </form>
+  </body>
+  <script></script>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用input进行文件上传</title>
+  </head>
+  <body>
+    <!-- <input type="file" id="fileInput" style="display: none" /> -->
+    <!-- <button class="upload" onclick="handlerUpdate()">选择文件</button> -->
+    <!-- <button class="upload" onclick="uploadFile()">文件提交</button> -->
+
+    <div class="center" style="width: 404px; margin: 100px auto">
+      <div
+        id="file"
+        style="
+          width: 404px;
+          height: 150px;
+          text-align: center;
+          padding-top: 30px;
+          margin: center;
+          background-color: rgb(232, 221, 203);
+        "
+      >
+        <!-- <input type="file" name="ver" id="fileInput" />-->
+        <input type="file" id="fileInput" style="display: none" multiple="multiple" size="200" />
+        <button class="upload" onclick="handlerUpdate()">选择文件</button>
+        <button class="upload" onclick="uploadFile()">上传</button>
+        <!-- 进度条 -->
+        <div
+          class="progress"
+          style="
+            position: relative;
+            top: 30px;
+            width: 300px;
+            height: 25px;
+            line-height: 25px;
+            margin: auto;
+            text-align: center;
+            border: 2px solid rgb(3, 101, 100);
+          "
+        >
+          <span class="percent" style="position: relative; z-index: 100">上传进度：0%</span>
+          <span
+            class="probg"
+            style="position: absolute; left: 0; top: 0; height: 25px; background-color: rgb(28, 170, 221); width: 0px"
+          ></span>
+        </div>
+      </div>
+
+      <div
+        class="feedback"
+        style="width: 396px; height: 30px; line-height: 30px; padding: 4px; margin-top: 20px; background-color: thistle"
+      >
+        服务端回信：
+      </div>
+    </div>
+  </body>
+  <script>
+    let fileInput = document.getElementById("fileInput");
+    let uploadbtn = document.querySelector(".upload");
+    let progress = document.querySelector(".progress");
+    let probg = document.querySelector(".probg");
+    let percentInfo = document.querySelector(".percent");
+    let feedback = document.querySelector(".feedback");
+
+    function handlerUpdate() {
+      const input = document.querySelector("#fileInput");
+      /* 通过调用input.click(),可以唤起文件选择弹窗,
+       *  所以你可以在button的点击事件里去调用这个方法,达到代理的目的
+       */
+      input.click();
+      console.log("input", input.files);
+    }
+
+    // 文件上传进度
+    let percent = 0;
+
+    function progressFunction(e) {
+      if (e.lengthComputable) {
+        // 获取百分制的进度
+        percent = Math.round((e.loaded / e.total) * 100);
+        // 长度根据进度条的总长度等比例扩大
+        probg.style.width = (progress.clientWidth / 100) * percent + "px";
+        // 进度数值按百分制来
+        percentInfo.innerHTML = "上传进度：" + percent + "%";
+      }
+    }
+
+    // 上传成功
+    function success(e) {
+      console.log("成功" + e);
+      feedback.innerHTML = "服务端回信：" + e.currentTarget.responseText;
+    }
+
+    // 上传失败
+    function fail(e) {
+      console.log("服务端回信：" + e);
+    }
+
+    // 文件上传
+    function uploadFile() {
+      console.log("fileInput.files", fileInput.files);
+      let file = fileInput.files[0];
+
+      if (!file) {
+        alert("请选择文件！");
+        return;
+      }
+      // 用FormData传输
+      let fd = new FormData();
+      fd.append("file", file);
+
+      // 文件上传并获取进度
+      let xhr = new XMLHttpRequest();
+      xhr.open("post", "http://127.0.0.1:3000/", true);
+
+      xhr.upload.onprogress = progressFunction;
+      xhr.onload = success;
+      xhr.onerror = fail;
+
+      xhr.send(fd);
+    }
+  </script>
+</html>

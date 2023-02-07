@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <p></p>
+  </body>
+  <script>
+    console.log("");
+    let objDemo1 = {
+      a: "a",
+      b: "b",
+      c: "c",
+    };
+    let objDemo2 = {};
+
+    console.log(isEmptyObject(objDemo1) ? "为空" : "不为空");
+    console.log(isEmptyObject(objDemo2) ? "为空" : "不为空");
+
+    /**
+     *
+     * @desc   判断`obj`是否为空
+     * @param  {Object} obj
+     * @return {Boolean}
+     */
+    function isEmptyObject(obj) {
+      if (!obj || typeof obj !== "object" || Array.isArray(obj)) return false;
+      return !Object.keys(obj).length;
+    }
+  </script>
+</html>

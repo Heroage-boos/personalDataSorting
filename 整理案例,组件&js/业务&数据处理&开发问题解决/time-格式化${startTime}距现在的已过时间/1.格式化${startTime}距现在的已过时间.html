@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <p>格式化${startTime}距现在的已过时间</p>
+    <button onclick="handleTime()">点击</button>
+    <span class="text"></span>
+  </body>
+  <script>
+    let textEl = document.getElementsByClassName("text")[0];
+    function handleTime() {
+      console.log("当前时间戳", new Date().getTime());
+      //天
+      let str = formatPassTime(new Date().getTime() - 1000 * 60 * 60 * 24 * 969);
+      textEl.textContent = str;
+    }
+
+    /**
+     * @desc   格式化${startTime}距现在的已过时间
+     * @param  {Date} startTime
+     * @return {String}
+     */
+    function formatPassTime(startTime) {
+      console.log("currentTime", Date.parse(new Date()));
+      var currentTime = Date.parse(new Date()),
+        time = currentTime - startTime,
+        day = parseInt(time / (1000 * 60 * 60 * 24)),
+        hour = parseInt(time / (1000 * 60 * 60)),
+        min = parseInt(time / (1000 * 60)),
+        month = parseInt(day / 30),
+        year = parseInt(month / 12);
+      if (year) return year + "年前";
+      if (month) return month + "个月前";
+      if (day) return day + "天前";
+      if (hour) return hour + "小时前";
+      if (min) return min + "分钟前";
+      else return "刚刚";
+    }
+  </script>
+</html>

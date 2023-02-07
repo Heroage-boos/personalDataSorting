@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>参考网址:https://codepen.io/alphardex/pen/ExxPRXN</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Lato);
+      body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: #303f9f;
+      }
+
+      ul {
+        display: flex;
+        color: white;
+        list-style-type: none;
+      }
+      ul:hover li a {
+        transform: scale(1.2);
+        opacity: 0.5;
+        filter: blur(2px);
+      }
+      ul li {
+        margin: 1em;
+      }
+      ul li a {
+        position: relative;
+        display: block;
+        padding: 5px;
+        font-family: Lato, sans-serif;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.5s;
+      }
+      ul li a:hover {
+        transform: scale(2);
+        opacity: 1;
+        filter: blur(0);
+      }
+      ul li a::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: #ff5252;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s;
+      }
+      ul li a:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#">home</a></li>
+      <li><a href="#">archives</a></li>
+      <li><a href="#">tags</a></li>
+      <li><a href="#">categories</a></li>
+      <li><a href="#">about</a></li>
+    </ul>
+  </body>
+  <script></script>
+</html>

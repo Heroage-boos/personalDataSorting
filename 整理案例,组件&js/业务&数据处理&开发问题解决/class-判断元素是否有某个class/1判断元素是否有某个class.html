@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="add-class" class="add-class2">判断某个元素是否具有class</div>
+  </body>
+  <script>
+    let el = document.getElementById("add-class");
+    console.log("el", hasClass(el, "add-class2") ? "有" : "无");
+    function hasClass(ele, cls) {
+      return new RegExp("(\\s|^)" + cls + "(\\s|$)").test(ele.className);
+    }
+  </script>
+</html>

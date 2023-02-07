@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" /> -->
+    <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+    <title>业务跟踪系统</title>
+    <!-- 微信H5 vscode -->
+    <script src="https://unpkg.com/vconsole@3.15.0/dist/vconsole.min.js"></script>
+    <script>
+      var vConsole = new window.VConsole();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/javascript">
+    var vConsole = new window.VConsole({
+      defaultPlugins: ["system", "network", "element", "storage"], // 可以在此设定要默认加载的面板
+      maxLogNumber: 1000,
+      // disableLogScrolling: true,
+      onReady: () => {
+        console.log("vConsole: onReady");
+      },
+      onClearLog: () => {
+        console.log("vConsole: onClearLog");
+      },
+    });
+  </script>
+</html>

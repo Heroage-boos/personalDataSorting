@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>过滤特殊字符2</p>
+    <input class="input" type="text" />
+  </body>
+  <script>
+    let input = document.getElementsByClassName("input")[0];
+
+    input.addEventListener("input", (e) => {
+      let value = e.target.value;
+      let strVal = filterCharacter(value);
+      console.log("过滤特殊字符", strVal);
+      e.target.value = strVal;
+    });
+
+    function filterCharacter(value) {
+      return value.replace(/([^0-9A-z\u4e00-\u9fa5]|[\^\_])/g, "");
+    }
+  </script>
+</html>

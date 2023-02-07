@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <p>过滤特殊字符</p>
+    <input class="input" type="text" />
+  </body>
+  <script>
+    let input = document.getElementsByClassName("input")[0];
+
+    input.addEventListener("input", (e) => {
+      let value = e.target.value;
+      let strVal = filterCharacter(value);
+      console.log("过滤特殊字符", strVal);
+      e.target.value = strVal;
+    });
+
+    function filterCharacter(str) {
+      // 示例
+      //   filterCharacter("gyaskjdhy12316789#$%^&!@#1=123,./["); // 结果:gyaskjdhy123167891123
+
+      // 首先设置一个模式
+      let pattern = new RegExp("[`~!@#$^&*()=：”“'。，、？|{}':;'%,\\[\\].<>/?~！@#￥……&*（）&;—|{ }【】‘；]");
+      let resultStr = "";
+      for (let i = 0; i < str.length; i++) {
+        // 主要通过 replace ，pattern 规则 去把字符替换成空 最后拼接在 resultStr
+        resultStr = resultStr + str.substr(i, 1).replace(pattern, "");
+      }
+      // 当循环结束的时候返回最后结果 resultStr
+      return resultStr;
+    }
+  </script>
+</html>

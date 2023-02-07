@@ -1,0 +1,246 @@
+/* 改变输入框的光标颜色 */
+input {
+  caret-color: red;
+}
+
+/* 3 行 CSS 将任意元素居中 */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 1 行 CSS 添加平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 将任意图片添加到页面标题以创建炫酷的效果 */
+h1 {
+  background: blue url("image.jpg");
+  backgroud-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-top: 20px;
+  font-size: 120px;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 45px;
+  }
+}
+/* 将任意图片添加到页面标题以创建炫酷的效果 */
+
+/* 纯 CSS 实现多行文字截断 */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 使任意元素可缩放 */
+.resize {
+  resize: both;
+}
+
+/* 将图片作为鼠标样式 */
+.my-cursor {
+  cursor: url("image.png"), auto;
+}
+
+/* 平滑滚动动画 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 启用混合模式 */
+body {
+  background-image: url("image.jpg");
+  background-color: purple;
+  background-blend-mode: screen;
+}
+
+/* 设置处于高亮状态时的样式 */
+p::selection {
+  background-color: pink;
+  color: rgb(235, 23, 41);
+}
+
+/* 作者：披着狼皮的羊_
+  链接：https://juejin.cn/post/7052347625470689317
+  来源：稀土掘金
+  著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 */
+
+/* 超出部分显示省略号 */
+/* / 单行文本 */
+.wrap {
+  overflow: hidden; /*超出部分隐藏*/
+  text-overflow: ellipsis; /*超出部分显示省略号*/
+  white-space: nowrap; /*规定段落中的文本不进行换行 */
+}
+/* // 多行文本 */
+.wrap {
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box; /*//将对象作为弹性伸缩盒子模型显示  *必须结合的属性* */
+  -webkit-box-orient: vertical; /*//设置伸缩盒对象的子元素的排列方式  *必须结合的属性 */
+  -webkit-line-clamp: 3; /* //用来限制在一个块元素中显示的文本的行数 */
+  word-break: break-all; /*//让浏览器实现在任意位置的换行 *break-all为允许在单词内换行* */
+}
+/* 超出部分显示省略号 */
+
+/* //不换行 */
+.wrap {
+  white-space: nowrap;
+}
+/* //自动换行 */
+.wrap {
+  word-wrap: break-word;
+  word-break: normal;
+}
+/* //强制换行 */
+.wrap {
+  word-break: break-all;
+}
+
+/* CSS实现文本两端对齐 */
+.wrap {
+  text-align: justify;
+  text-justify: distribute-all-lines; /* ie6-8*/
+  text-align-last: justify; /* 一个块或行的最后一行对齐方式*/
+  -moz-text-align-last: justify;
+  -webkit-text-align-last: justify;
+}
+
+/* 单列展示时 */
+.wrap {
+  width: 25px;
+  line-height: 18px;
+  height: auto;
+  font-size: 12px;
+  padding: 8px 5px;
+  word-wrap: break-word; /*英文的时候需要加上这句，自动换行*/
+}
+
+/*  多列展示时 */
+.wrap {
+  height: 210px;
+  line-height: 30px;
+  text-align: justify;
+  writing-mode: vertical-lr; /*从左向右    */
+  writing-mode: tb-lr; /*IE从左向右*/
+  writing-mode: vertical-rl; /* 从右向左*/
+  writing-mode: tb-rl; /* 从右向左*/
+}
+
+/* 使元素鼠标事件失效 */
+.wrap {
+  /* // 如果按tab能选中该元素，如button，然后按回车还是能执行对应的事件，如click。 */
+  pointer-events: none;
+  cursor: default;
+}
+
+/* 禁止用户选择 */
+.wrap {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* cursor属性 */
+.wrap {
+  cursor: pointer; /*小手指； */
+  cursor: help; /*箭头加问号； */
+  cursor: wait; /*转圈圈； */
+  cursor: move; /*移动光标； */
+  cursor: crosshair; /*十字光标 */
+  cursor: not-allowed; /*按钮禁用时的鼠标样式 */
+}
+
+/* 图片宽度自适应 */
+img {
+  max-width: 100%;
+}
+
+/* Text-transform和Font Variant */
+p {
+  text-transform: uppercase;
+} /*   将所有字母变成大写字母*/
+p {
+  text-transform: lowercase;
+} /* 将所有字母变成小写字母*/
+p {
+  text-transform: capitalize;
+} /*  首字母大写*/
+p {
+  font-variant: small-caps;
+} /* 将字体变成小型的大写字母*/
+
+/* 消除transition闪屏 */
+.wrap {
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+
+/* 自定义滚动条 */
+/* overflow-y: scroll; */
+/* 整个滚动条 */
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* 滚动条的轨道 */
+::-webkit-scrollbar-track {
+  background-color: #ffa336;
+  border-radius: 5px;
+}
+/* 滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+  background-color: #ffc076;
+  border-radius: 5px;
+}
+
+/* 让 HTML 识别 string 里的 '\n' 并换行 */
+body {
+  white-space: pre-line;
+}
+
+/* 移除a标签被点链接的边框 */
+a {
+  outline: none;
+}
+a {
+  outline: 0;
+}
+/* 使用CSS显示链接之后的URL */
+a:after {
+  content: " (" attr(href) ") ";
+}
+
+/* select内容居中显示、下拉内容右对齐 */
+select {
+  text-align: center;
+  text-align-last: center;
+}
+select option {
+  direction: rtl;
+}
+/* select内容居中显示、下拉内容右对齐 */
+
+/* 边框字体同色 */
+.wrap {
+  width: 200px;
+  height: 200px;
+  color: #000;
+  font-size: 30px;
+  border: 50px solid currentColor;
+  /* // border: 50px solid; // 实现二 */
+}
+
+/* 作者：王二求
+链接：https://juejin.cn/post/6844903965788749838
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 */

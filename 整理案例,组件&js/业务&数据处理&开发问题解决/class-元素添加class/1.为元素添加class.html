@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="add-class">为元素添加class</div>
+  </body>
+  <script>
+    let el = document.getElementById("add-class");
+    addClass(el, "new-class");
+    console.log("为元素添加class", addClass(el, "new-class"));
+    function addClass(ele, cls) {
+      if (hasClass(ele, cls)) {
+        ele.className += " " + cls;
+      }
+    }
+    function hasClass(ele, cls) {
+      return new RegExp("(\\s|^)" + cls + "(\\s|$)").test(ele.className);
+    }
+
+    //测试
+    setTimeout(() => {
+      console.log(
+        document.getElementsByClassName("new-class").length
+          ? document.getElementsByClassName("new-class")
+          : "添加class失败"
+      );
+    }, 0);
+  </script>
+</html>

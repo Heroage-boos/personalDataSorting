@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <p>格式化现在距${endTime}的剩余时间</p>
+    <p class="text">距离2024年元旦还有:</p>
+  </body>
+  <script>
+    let textEl = document.getElementsByClassName("text")[0];
+
+    setInterval(() => {
+      let time = formatRemainTime("2024-01-01");
+      // textEl.append(time);
+      textEl.textContent = "距离2024年元旦还有:" + time;
+    }, 1000 / 60);
+
+    /**
+     *
+     * @desc   格式化现在距${endTime}的剩余时间
+     * @param  {Date} endTime
+     * @return {String}
+     */
+    function formatRemainTime(endTime) {
+      var startDate = new Date(); //开始时间
+      var endDate = new Date(endTime); //结束时间
+      var t = endDate.getTime() - startDate.getTime(); //时间差
+      var d = 0,
+        h = 0,
+        m = 0,
+        s = 0;
+      if (t >= 0) {
+        d = Math.floor(t / 1000 / 3600 / 24);
+        h = Math.floor((t / 1000 / 60 / 60) % 24);
+        m = Math.floor((t / 1000 / 60) % 60);
+        s = Math.floor((t / 1000) % 60);
+      }
+      return d + "天 " + h + "小时 " + m + "分钟 " + s + "秒";
+    }
+  </script>
+</html>

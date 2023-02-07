@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>参考网址:https://codepen.io/alphardex/pen/QWWavvx</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap");
+
+      body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: #3498db;
+      }
+
+      .bubbling {
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        color: white;
+        font-size: 2.5rem;
+        font-family: "Bubblegum Sans", cursive;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .bubble {
+        position: absolute;
+        background: white;
+        border-radius: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bubbling">fushigi no monogatari</div>
+  </body>
+  <script>
+    // For a better performance, use requestAnimationFrame instead of setInterval
+    // https://css-tricks.com/snippets/javascript/replacements-setinterval-using-requestanimationframe/
+    const requestInterval = (fn, delay) => {
+      let start = new Date().getTime();
+      let handle = { value: 0 };
+      let loop = () => {
+        handle.value = requestAnimationFrame(loop);
+        let current = new Date().getTime();
+        let delta = current - start;
+        if (delta >= delay) {
+          fn();
+          start = new Date().getTime();
+        }
+      };
+      handle.value = requestAnimationFrame(loop);
+      return handle;
+    };
+    const sample = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+    let bubbleSizes = [3, 6, 9, 12];
+    let bubbleText = document.querySelector(".bubbling");
+    let bubblePositions = Array.from(Array(bubbleText.offsetWidth).keys());
+    requestInterval(() => {
+      let bubbleSize = sample(bubbleSizes);
+      let bubblePosition = sample(bubblePositions);
+      let bubble = document.createElement("div");
+      bubble.className = "bubble";
+      bubble.style.width = `${bubbleSize}px`;
+      bubble.style.height = `${bubbleSize}px`;
+      bubble.style.left = `${bubblePosition}px`;
+      bubbleText.append(bubble);
+      let bubbleAnimation = bubble.animate(
+        [
+          { bottom: "10px", opacity: 1 },
+          { bottom: "180%", opacity: 0.6 },
+        ],
+        {
+          fill: "forwards",
+          duration: 3000,
+        }
+      );
+      bubbleAnimation.onfinish = () => bubble.remove();
+    }, 300);
+  </script>
+</html>

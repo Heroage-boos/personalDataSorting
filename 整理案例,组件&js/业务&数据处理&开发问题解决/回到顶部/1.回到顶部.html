@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="con"></div>
+    <button onclick="bindTop()">回到顶部1</button>
+    <button onclick="bindTop2()" class="top">回到顶部2</button>
+  </body>
+  <script>
+    let conEl = document.getElementsByClassName("con")[0];
+    let resetTopEl = document.getElementsByClassName("top")[0];
+    for (let i = 0; i <= 2000; i++) {
+      conEl.innerHTML += `<div>${i}</div>`;
+    }
+
+    // 这里我把 vue3 的案例拿过来
+    const bindTop = () => {
+      // 方法一 这样可以实现，但是效果不太行
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+    };
+
+    const bindTop2 = () => {
+      // 方法二 通过计时器去滚动 视觉上会丝滑一些，没有太大的卡顿效果
+      console.log("scrollTopH.value", document.documentElement.scrollTop);
+      const timeTop = setInterval(() => {
+        // 去控制他的滑行距离
+        document.documentElement.scrollTop = document.documentElement.scrollTop -= 150;
+        // 当滑到顶部的时候记得清除计时器(*) 重点
+        if (document.documentElement.scrollTop <= 0) {
+          clearInterval(timeTop);
+        }
+      }, 1000 / 60);
+    };
+  </script>
+</html>

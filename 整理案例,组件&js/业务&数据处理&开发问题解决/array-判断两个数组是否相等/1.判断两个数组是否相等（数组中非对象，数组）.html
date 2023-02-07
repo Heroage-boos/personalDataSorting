@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <p>判断两个数组是否相等</p>
+  </body>
+  <script>
+    let array1 = [
+      "1",
+      {
+        a: "1",
+      },
+      [1],
+    ];
+    let array2 = [
+      "1",
+      {
+        a: "1",
+      },
+      [1],
+    ];
+    let array3 = [
+      "1",
+      {
+        a: "1",
+      },
+      [2],
+    ];
+    let array4 = ["1"];
+    let array5 = ["1"];
+    console.log(arrayEqual(array1, array2) ? "相等" : "不相等");
+    console.log(arrayEqual(array2, array3) ? "相等" : "不相等");
+    console.log(arrayEqual(array4, array5) ? "相等" : "不相等");
+
+    function arrayEqual(arr1, arr2) {
+      if (arr1 === arr2) return true;
+      if (arr1.length != arr2.length) return false;
+      for (var i = 0; i < arr1.length; ++i) {
+        if (arr1[i] !== arr2[i]) return false;
+      }
+      return true;
+    }
+  </script>
+</html>
